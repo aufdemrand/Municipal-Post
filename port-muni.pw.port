@@ -1,0 +1,27 @@
+spaceport name: port-muni.pw
+spaceport root: /opt/spaceport/
+debug: true
+
+admin:
+    name: administrator
+    email: administrator@port-muni.pw
+
+physical memory cores:
+  main-core:
+    type: couchdb
+    address: 'http://127.0.0.1:5984'
+    username: admin
+
+modules:
+  include paths:
+    - /opt/spaceport/port-muni.pw/modules/muni/
+  class paths:
+    - /opt/spaceport/port-muni.pw/modules/
+
+static:
+  root paths:
+    /static/: /opt/spaceport/static/
+
+host:
+    address: 127.0.0.1
+    port: '80'
