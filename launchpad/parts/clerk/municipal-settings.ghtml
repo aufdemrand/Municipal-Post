@@ -1,0 +1,19 @@
+<%@ page import="muni.documents.Municipality" %>
+<%
+    def municipality = Municipality.get()
+%>
+
+<panel>
+    <label>Name</label>
+    <input type="text" name="name" value="${ municipality.name }"
+           on-blur="${ _{ t -> municipality.setName(t.value) }}">
+
+    <label>State</label>
+    <input type="text" name="state" value="${ municipality.state }"
+           on-blur="${ _{ t -> municipality.setState(t.value) }}">
+
+    <label>County</label>
+    <input type="text" name="county" value="${ municipality.county }"
+           on-blur="${ _{ t -> municipality.setCounty(t.value) }}">
+
+</panel>

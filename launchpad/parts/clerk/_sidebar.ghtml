@@ -1,0 +1,23 @@
+<aside>
+    <panel class="small-gap">
+        <label>Views</label>
+        <a>Dashboard</a>
+        <a>News</a>
+    </panel>
+
+    <panel class="small-gap">
+        <label>Actions</label>
+        <a>Create News Post</a>
+    </panel>
+
+    <panel class="small-gap">
+        <label>Settings</label>
+        <a href="municipal-settings">Municipality</a>
+        <a>Departments</a>
+        <a>Employees</a>
+        <a>Elected Officials</a>
+        <a>Boards & Commissions</a>
+        <a>General Settings</a>
+    </panel>
+
+</aside>

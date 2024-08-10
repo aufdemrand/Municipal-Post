@@ -1,0 +1,57 @@
+<%@ page import="java.time.LocalDate; muni.documents.Municipality" %>
+<%
+    def municipality = Municipality.get()
+%>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="${ municipality.name }, ${ municipality.state }">
+    <title>${ municipality.name }, ${ municipality.state }</title>
+    <!-- Link to external stylesheets or add internal styles here -->
+    <link rel="stylesheet" href="/assets/css/frontend.css?${ 6.randomID() }">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Lato&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <img src="/assets/img/municipal-logo.svg" alt="${ municipality.name } Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="/discover.html">Discover</a></li>
+                <li><a href="/government.html">Government</a></li>
+                <!-- Departments -->
+                <li><a href="/services/index.html">Citizen Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <payload/>
+</main>
+
+<footer>
+    <div id="contact" class="container">
+
+
+    </div>
+
+    <div class="container">
+        <p>&copy; ${ LocalDate.now().year } ${ municipality.name }, ${ municipality.state }. All rights reserved.</p>
+        <ul>
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+    </div>
+</footer>
+
+<!-- Link to external JavaScript files -->
+<script src="/*/assets/js/hud-core.js"></script>
+</body>
+</html>

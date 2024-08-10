@@ -2,9 +2,13 @@ spaceport name: port-muni.pw
 spaceport root: /opt/spaceport/
 debug: true
 
+access:
+  query keys:
+    ['grapefruit43569']
+
 admin:
     name: administrator
-    email: administrator@port-muni.pw
+    email: administrator@muni.pw
 
 physical memory cores:
   main-core:
@@ -15,12 +19,17 @@ physical memory cores:
 modules:
   include paths:
     - /opt/spaceport/port-muni.pw/modules/muni/
+    - /opt/spaceport/port-muni.pw/modules/muni/documents/
+    - /opt/spaceport/spaceport-utils/modules/engineering/
   class paths:
     - /opt/spaceport/port-muni.pw/modules/
+    - /opt/spaceport/spaceport-utils/modules/
 
 static:
   root paths:
     /static/: /opt/spaceport/static/
+    /assets/: /opt/spaceport/port-muni.pw/assets/
+    /*/assets/: /opt/spaceport/spaceport-utils/assets/
 
 host:
     address: 127.0.0.1
