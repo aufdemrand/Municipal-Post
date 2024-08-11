@@ -1,0 +1,43 @@
+.logo {
+    height: 5rem;
+}
+
+header {
+    background-color: #d1ffe3;
+}
+
+footer {
+    padding: 2rem;
+    height: 5.9rem;
+}
+
+main {
+    min-height: calc(100vh - 12rem);
+}
+
+a.active {
+    text-decoration: underline;
+}
+
+.ql-toolbar.ql-snow {
+    border: 2px outset lightgray !important;
+    background-color: whitesmoke;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.ql-editor {
+    border: 2px inset lightgray !important;
+    border-top: 0 !important;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.ql-container.ql-snow {
+    border: 0 !important;
+}
+
+hr {
+    border: 1px solid lightgray;
+    margin-block: 1em;
+}

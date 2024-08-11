@@ -3,17 +3,48 @@
     def municipality = Municipality.get()
 %>
 
+<link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+
+<script>
+    document.querySelector('[href=municipal-settings]').classList.add('active');
+</script>
+
+<h2>Municipality Settings</h2>
+
+<p>These details will be used throughout Municipal Post when referring to your municipality.</p>
+
 <panel>
-    <label>Name</label>
-    <input type="text" name="name" value="${ municipality.name }"
-           on-blur="${ _{ t -> municipality.setName(t.value) }}">
+    <label>Municipal Name</label>
+    <input type=text name=name value="${ municipality.name }"
+           on-blur=${ _{ t -> municipality.setName(t.value) }}>
 
     <label>State</label>
-    <input type="text" name="state" value="${ municipality.state }"
-           on-blur="${ _{ t -> municipality.setState(t.value) }}">
+    <input type=text name=state value="${ municipality.state }"
+           on-blur=${ _{ t -> municipality.setState(t.value) }}>
 
     <label>County</label>
-    <input type="text" name="county" value="${ municipality.county }"
-           on-blur="${ _{ t -> municipality.setCounty(t.value) }}">
+    <input type=text name=county value="${ municipality.county }"
+           on-blur=${ _{ t -> municipality.setCounty(t.value) }}>
+
+    <hr>
+
+    <strong>Discover</strong>
+
+    <p>These details will be used to help users discover more about your municipality.</p>
+
+    <label>Description</label>
+    <div>
+        <div id=editor eval="quill.getSemanticHTML()"
+            on-blur=${ _{ t -> municipality.setDescription(t.eval) }}
+        >${ municipality.description }</div>
+        <script>
+          const quill = new Quill('#editor', { theme: 'snow' });
+          // add on-blur event to editor so we can save the content
+          document.querySelector('.ql-editor').addEventListener('blur', function() {
+            document.querySelector('#editor').dispatchEvent(new Event('blur'));
+          });
+        </script>
+    </div>
 
 </panel>

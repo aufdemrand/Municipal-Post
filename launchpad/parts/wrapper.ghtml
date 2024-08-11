@@ -11,7 +11,7 @@
     <meta name="description" content="${ municipality.name }, ${ municipality.state }">
     <title>${ municipality.name }, ${ municipality.state }</title>
     <!-- Link to external stylesheets or add internal styles here -->
-    <link rel="stylesheet" href="/assets/css/frontend.css?${ 6.randomID() }">
+    <link rel="stylesheet" href="/assets/css/styles.css?${ 6.randomID() }">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Lato&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>

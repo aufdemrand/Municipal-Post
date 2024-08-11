@@ -1,5 +1,6 @@
 package muni
 
+import muni.documents.Municipality
 import spaceport.communications.http.launchpad.Launchpad
 import spaceport.computer.alerts.Alert
 import spaceport.computer.alerts.results.HttpResult
@@ -40,13 +41,16 @@ class _Router {
     // authenticated, they will be redirected to the login page.
     static authPlug = { HttpResult r ->
         if (!r.client.isAuthenticated()) {
+            def title = 'Login | ' + Municipality.get().getName()
             r.setRedirectUrl('/*/login/' +
-                    '?logo=/assets/img/municipal-logo.png' +
+                    '?title=' + title +
+                    '&logo=/assets/img/municipal-logo.svg' +
                     '&redirect-url=' + r.context.request.requestURI)
             return false
         }
         return true
     }
+
 
     // UI for the Municipal Clerk, Municipal Administrator, Code Enforcement, Mayor, Elected Officials, etc.
     // This UI is a more back-end approach to Municipal operations, and allows people in specific roles
@@ -64,5 +68,6 @@ class _Router {
             r.setStatus(403) // Forbidden
         }
     }
+
 
 }
